@@ -1,0 +1,124 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Default background for larger screens (PC) */
+body {
+    background-image: url('images/pcimg.webp');
+}
+
+/* Background for smaller screens (Phones) */
+@media (max-width: 768px) {
+    body {
+        background-image: url('images/phoneimg.webp');
+    }
+}
+
+/* Container styling */
+.container {
+    background: rgba(44, 44, 44, 0.555);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background: #940404;
+    color: white;
+    border: none;   
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: red;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    height: 80px;
+    width: 250px;
+}
+
+/* Center the logo in the container */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 80%; /* Adjust as needed */
+    height: 100%;
+}
+
+.crypto-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.crypto-logo {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.crypto-logo:hover {
+    transform: scale(1.1);
+}
+
+#paymentDetails {
+    display: none;
+    margin-top: 20px;
+}
+
+#cryptoText, #footerText {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: bold;
+}
+
+#footerText {   
+    margin-top: 40px;
+    color: #e4e4e4;
+}

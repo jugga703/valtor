@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="images/logo.webp" alt="App Logo">
+            </div>
+
+            <form onsubmit="validateLogin(event)">
+                <!-- Other login fields like username and password -->
+                <div>
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter Username" required>
+                </div>
+                <div>
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter Password" required>
+                </div>
+                
+                <!-- CAPTCHA -->
+                <div>
+                    <canvas id="captchaCanvasLogin"></canvas> <!-- Display CAPTCHA here -->
+                </div>
+                <div>
+                    <input type="text" id="loginCaptcha" placeholder="Enter CAPTCHA" required>
+                </div>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a style="color: red;" href="register.html">Register here</a></p>
+
+            </form>
+                    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

